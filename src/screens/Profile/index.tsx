@@ -70,7 +70,7 @@ export function Profile() {
         <Button
           title="Página Inicial"
           icon="home"
-          onPress={handleLogout}
+          onPress={() => navigation.navigate('HomePage')}
         />
 
         <Button
