@@ -9,6 +9,7 @@ import { FontAwesome } from '@expo/vector-icons';
 
 import { HomePage } from '../screens/HomePage'
 import { Sync } from '../screens/Sync'
+import { Vaccines } from '../screens/Vaccines'
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabs() {
@@ -55,7 +56,7 @@ export default function BottomTabs() {
       />
 
       <Tab.Screen name="Vacinas"
-        component={HomePage}
+        component={Vaccines}
         options={{
           tabBarLabel: 'Vacinas',
           tabBarActiveTintColor: 'green',
