@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { theme } from '../styles/theme';
-import { HomePage } from '../screens/HomePage'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 
+
+import { HomePage } from '../screens/HomePage'
+import { Sync } from '../screens/Sync'
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabs() {
@@ -66,7 +68,7 @@ export default function BottomTabs() {
       />
 
       <Tab.Screen name="Sincronizar"
-        component={HomePage}
+        component={Sync}
         options={{
           tabBarLabel: 'Sincronizar',
           tabBarActiveTintColor: 'green',
