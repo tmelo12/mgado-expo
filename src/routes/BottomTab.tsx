@@ -10,6 +10,8 @@ import { FontAwesome } from '@expo/vector-icons';
 import { HomePage } from '../screens/HomePage'
 import { Sync } from '../screens/Sync'
 import { Vaccines } from '../screens/Vaccines'
+import { Animal } from '../screens/Animal'
+import { Farm } from '../screens/Farm'
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabs() {
@@ -30,7 +32,7 @@ export default function BottomTabs() {
       />
 
       <Tab.Screen name="Meus Animais"
-        component={HomePage}
+        component={Animal}
         options={{
           tabBarLabel: 'Meus Animais',
           tabBarActiveTintColor: 'green',
@@ -43,7 +45,7 @@ export default function BottomTabs() {
       />
 
       <Tab.Screen name="Meus Campos"
-        component={HomePage}
+        component={Farm}
         options={{
           tabBarLabel: 'Meus Campos',
           tabBarActiveTintColor: 'green',
