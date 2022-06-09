@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Feather } from '@expo/vector-icons';
-
 import { ProfileHeader } from '../../components/ProfileHeader';
 import { Avatar } from '../../components/Avatar';
 import { Button } from '../../components/Button';
-
 import { styles } from './styles';
-import { theme } from '../../styles/theme';
 
 type Params ={
   token: string;
@@ -27,7 +23,6 @@ export function Profile() {
   const route = useRoute();
   const navigation = useNavigation();
   const { token } = route.params as Params;
-
   async function handleLogout() {
     navigation.navigate('SignIn');
   }
@@ -70,7 +65,11 @@ export function Profile() {
         <Button
           title="Página Inicial"
           icon="home"
-          onPress={() => navigation.navigate('HomePage')}
+          onPress={() => navigation.navigate('HomePage', 
+                                            {screen: 'Resumo',
+                                            params: {profile:profile}}
+                                            
+          )}
         />
 
         <Button

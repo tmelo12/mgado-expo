@@ -13,8 +13,5 @@ export const theme = {
     regular: 'Inter_400Regular',
     medium: 'Inter_500Medium',
     bold: 'Inter_700Bold'
-  },
-  statusBar:{
-    len: getStatusBarHeight()
   }
 }

@@ -2,11 +2,8 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { theme } from '../styles/theme';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
-
-
 import { HomePage } from '../screens/HomePage'
 import { Sync } from '../screens/Sync'
 import { Vaccines } from '../screens/Vaccines'

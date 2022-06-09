@@ -31,13 +31,6 @@ export default function App() {
         flex: 1,
         backgroundColor: theme.colors.background
       }}>
-
-      <StatusBar
-        style="light"
-        backgroundColor="transparent"
-        translucent
-      />
-
       <Routes />
     </View>
   );

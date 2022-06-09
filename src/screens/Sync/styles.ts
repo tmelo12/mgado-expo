@@ -3,7 +3,6 @@ import { theme } from '../../styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
-    marginTop: theme.statusBar.len,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
