@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Tabs from './BottomTab'
 import { Profile } from '../screens/Profile';
 import { SignIn } from '../screens/SignIn';
+import { Details } from '../screens/HomePage/details'
 const { Navigator, Screen } = createStackNavigator();
 
 export function Routes() {
@@ -21,6 +22,10 @@ export function Routes() {
         <Screen
           name="HomePage"
           component={Tabs}
+        />
+        <Screen
+          name="Details"
+          component={Details}
         />
       </Navigator>
     </NavigationContainer>
