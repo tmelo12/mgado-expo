@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { theme } from '../../styles/theme';
+import { Dimensions } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -14,22 +15,13 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.fontFamily,
     position: 'absolute',
     top: 0,
-    marginTop: 25
+    marginTop: 55
   },
-  button: {
-    alignItems: "center",
-    backgroundColor: "#b3ffd9",
-    padding: 10,
-    borderColor:'#000',
-    borderWidth: 1,
-    borderRadius: 20,
-    width: '80%',
-    height: '6%'
-  },
-  mensage:{
+  info:{
     color: 'white',
+    fontFamily: 'notoserif',
     textAlign: 'center',
-    fontFamily:'notoserif',
-    fontSize: 40,
+    marginTop: Dimensions.get('window').height - 700,
   },
+  
 });

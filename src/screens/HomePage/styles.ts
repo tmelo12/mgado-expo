@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     color: 'white',
     fontFamily: theme.fonts.fontFamily,
     top: 0,
+    marginTop: 25
   },
   typeAnimal: {
     fontSize: 15,

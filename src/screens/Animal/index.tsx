@@ -4,13 +4,37 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { styles } from './styles';
 import { Background } from '../../components/Background'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { CardAnimal } from '../../components/CardAnimal'
+import { ScrollView } from 'react-native-gesture-handler';
 
 export function Animal() {
   return (
-      <SafeAreaView style={styles.container}>
-        <Background/>
-        <Text style={styles.title}>Meus Animais <MaterialCommunityIcons name="home-group" color={'#fff'} size={30} /></Text>
-            <Text style={styles.mensage}>PÁGINA EM CONSTRUÇÃO.</Text>
-      </SafeAreaView>
+    <>
+      <Background />
+      <View style={styles.container}>
+        <Text style={styles.title}>Meus Animais <MaterialCommunityIcons name="account-cowboy-hat" color={'#fff'} size={30} /></Text>
+      </View>
+      <Text style={styles.info}>Selecione um tipo de registro.</Text>
+
+      <ScrollView>
+        <CardAnimal typeAnimal={'Bovinos'}/>
+
+        <CardAnimal typeAnimal={'Bulbalinos'}/>
+
+        <CardAnimal typeAnimal={'Caprinos'}/>
+
+        <CardAnimal typeAnimal={'Ovinos'}/>
+
+        <CardAnimal typeAnimal={'Equinos'}/>
+
+        <CardAnimal typeAnimal={'Asininos'}/>
+
+        <CardAnimal typeAnimal={'Muares'}/>
+
+        <CardAnimal typeAnimal={'Aves'}/>
+
+      </ScrollView>
+
+    </>
   );
 }

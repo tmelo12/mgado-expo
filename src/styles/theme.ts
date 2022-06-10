@@ -1,4 +1,3 @@
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 export const theme = {
   colors: {
     background: '#FFFFFF',

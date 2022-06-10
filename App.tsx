@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler';
 
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import AppLoading from 'expo-app-loading';
 import {
   useFonts,
@@ -12,7 +11,6 @@ import {
 
 import { Routes } from './src/routes';
 import { View } from 'react-native';
-import { theme } from './src/styles/theme';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -28,8 +26,7 @@ export default function App() {
   return (
     <View
       style={{
-        flex: 1,
-        backgroundColor: theme.colors.background
+        flex: 1
       }}>
       <Routes />
     </View>

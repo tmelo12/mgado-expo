@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Background } from '../../components/Background'
 import { CardAnimalHome } from '../../components/CardAnimalHome'
-import { ProfileHeader } from '../../components/ProfileHeader';
-import { Avatar } from '../../components/Avatar';
-import { Button } from '../../components/Button';
-
 import { styles } from './styles';
-import { theme } from '../../styles/theme';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 

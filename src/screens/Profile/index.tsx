@@ -6,7 +6,7 @@ import { Avatar } from '../../components/Avatar';
 import { Button } from '../../components/Button';
 import { styles } from './styles';
 
-type Params ={
+type Params = {
   token: string;
 }
 
@@ -27,22 +27,22 @@ export function Profile() {
     navigation.navigate('SignIn');
   }
 
-  async function loadProfile(){
+  async function loadProfile() {
     const response = fetch(`https://www.googleapis.com/oauth2/v2/userinfo?alt=json&access_token=${token}`)
-    .then(async (response) => {
-      const userInfo = await response.json();
-      setProfile(userInfo);
-    })
-    .catch(err => {
-      console.log(err);
-      setProfile({} as Profile);
-    });
-    
+      .then(async (response) => {
+        const userInfo = await response.json();
+        setProfile(userInfo);
+      })
+      .catch(err => {
+        console.log(err);
+        setProfile({} as Profile);
+      });
+
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     loadProfile();
-  },[])
+  }, [])
 
   return (
     <View style={styles.container}>
@@ -65,10 +65,12 @@ export function Profile() {
         <Button
           title="Página Inicial"
           icon="home"
-          onPress={() => navigation.navigate('HomePage', 
-                                            {screen: 'Resumo',
-                                            params: {profile:profile}}
-                                            
+          onPress={() => navigation.navigate('HomePage',
+            {
+              screen: 'Resumo',
+              params: { profile: profile }
+            }
+
           )}
         />
 

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '../../styles/theme';
+import { Dimensions } from 'react-native';
 
 export const styles = StyleSheet.create({
   background:{
@@ -7,6 +7,6 @@ export const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
-    height: '100%',
+    height: Dimensions.get('window').height,
   },
 });
