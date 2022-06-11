@@ -5,13 +5,14 @@ import { ControlledInput } from '../ControledInput';
 import { Container } from './styles';
 import { useForm } from 'react-hook-form';
 import * as yup from "yup";
-import { yupResolver  } from "@hookform/resolvers/yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import uuid from 'react-native-uuid';
 import { useAuth } from '../../hooks/useAuth';
+import { Alert } from 'react-native';
 
-type FormData ={
+type FormData = {
   id: number[] | string;
   name: string;
   local: string;
@@ -24,32 +25,39 @@ const schema = yup.object({
 })
 
 export function FormFarm() {
-  const { control, handleSubmit, formState:{ errors } } = useForm<FormData>({
+  const { control, reset , handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: yupResolver(schema)
   });
 
   const navigation = useNavigation();
-  const { user } = useAuth(); 
+  const { user } = useAuth();
   const handleCancel = () => {
     navigation.goBack();
   }
-  
+
   async function handleRegister(data: FormData) {
-    try{
+    try {
       //capturar o que ja tem
       const response = await AsyncStorage.getItem('@meugado_off:farms');
       const previousData = response ? JSON.parse(response) : [];
       console.log(previousData);
-      
       data.email_user = user?.email as string;
       data.id = uuid.v4();
       const farmInfo = JSON.stringify(data);
-      //await AsyncStorage.setItem('@meugado_off:farms', farmInfo);
-      alert("Campo registrado com sucesso!");
+      const registers = [...previousData, farmInfo];
+      await AsyncStorage.setItem('@meugado_off:farms', JSON.stringify(registers));
+      Alert.alert("Sucesso!",
+        "O cadastro foi salvo com sucesso!",
+        [{ text: "OK" }]);
+
+      //limpar o formulario
+      reset();
     }
-    catch(e){
+    catch (e) {
       console.log(e);
-      alert("Houve um problema ao salvar. Tente novamente mais tarde.")
+      Alert.alert("Erro!",
+      "Houve um erro inesperado ao salvar, tente novamente mais tarde.",
+      [{ text: "OK" }]);
     }
   }
 
@@ -72,7 +80,7 @@ export function FormFarm() {
       <ButtonForm
         title="Cadastrar"
         colorButton={theme.colors.buttonSave}
-        onPress={ handleSubmit(handleRegister) }
+        onPress={handleSubmit(handleRegister)}
       />
 
       <ButtonForm
