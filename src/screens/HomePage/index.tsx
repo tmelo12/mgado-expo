@@ -8,11 +8,22 @@ import { styles } from './styles';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+type Profile = {
+  email: string;
+  family_name: string;
+  given_name: string;
+  name: string;
+  picture: string;
+}
+
+type Params = {
+  profile: Profile;
+}
+
 export function HomePage() {
   const route = useRoute();
   const navigation = useNavigation();
-  const { name } = route.params?.profile;
-  const { email } = route.params?.profile;
+  const profile = route.params as Params;
 
   return (
     <SafeAreaView>
@@ -22,8 +33,8 @@ export function HomePage() {
 
 
           <Text style={styles.title}>Resumo <MaterialCommunityIcons name="clipboard-file" color={'#fff'} size={30} /></Text>
-          <Text style={styles.welcome}>Bem-vindo, {name}</Text>
-          <Text style={styles.info}>Aperte sobre o animal que deseja para visualizar um resumo completo.</Text>
+          <Text style={styles.welcome}>Bem-vindo, {profile.profile?.name}</Text>
+          <Text style={styles.info}>Aperte sobre o animal que deseja para visualizar {"\n"}um resumo completo.</Text>
 
           <Text style={styles.typeAnimal}>Bovinos</Text>
           <CardAnimalHome type={'bovinos-b'} />

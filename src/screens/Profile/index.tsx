@@ -5,6 +5,8 @@ import { ProfileHeader } from '../../components/ProfileHeader';
 import { Avatar } from '../../components/Avatar';
 import { Button } from '../../components/Button';
 import { styles } from './styles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import uuid from 'react-native-uuid';
 
 type Params = {
   token: string;
@@ -22,26 +24,62 @@ export function Profile() {
   const [profile, setProfile] = useState({} as Profile);
   const route = useRoute();
   const navigation = useNavigation();
-  const { token } = route.params as Params;
+  //route.params as Params;
+  console.log('Profile ', profile);
+
   async function handleLogout() {
+    await removeUser();
     navigation.navigate('SignIn');
   }
 
-  async function loadProfile() {
-    const response = fetch(`https://www.googleapis.com/oauth2/v2/userinfo?alt=json&access_token=${token}`)
+  const storeUser = async (value: Profile) => {
+    try {
+      const userInfo = JSON.stringify(value);
+      await AsyncStorage.setItem('@meugado_off:user', userInfo);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  const removeUser = async () => {
+    try {
+      await AsyncStorage.removeItem('@meugado_off:user')
+    } catch (e) {
+      console.log(e);
+    }
+    console.log('Done.')
+  }
+
+  const getUserInfoAsyncStorage = async () => {
+    try {
+      const value = await AsyncStorage.getItem('@meugado_off:user');
+      if (value !== null) {
+        setProfile(JSON.parse(value) as Profile);
+      }
+      else {
+        const { token } = route.params as Params;
+        await loadProfile(token);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async function loadProfile(token: string) {
+    const response = await fetch(`https://www.googleapis.com/oauth2/v2/userinfo?alt=json&access_token=${token}`)
       .then(async (response) => {
         const userInfo = await response.json();
         setProfile(userInfo);
+        await storeUser(userInfo);
       })
       .catch(err => {
         console.log(err);
         setProfile({} as Profile);
       });
-
   }
 
   useEffect(() => {
-    loadProfile();
+    getUserInfoAsyncStorage();
   }, [])
 
   return (
@@ -51,7 +89,7 @@ export function Profile() {
       <View style={styles.content}>
         <View style={styles.profile}>
           <Avatar
-            source={{ uri: profile.picture }}
+            source={{ uri: profile.picture ? profile.picture : undefined }}
           />
 
           <Text style={styles.name}>
@@ -68,7 +106,7 @@ export function Profile() {
           onPress={() => navigation.navigate('HomePage',
             {
               screen: 'Resumo',
-              params: { profile: profile }
+              params: { profile: profile as Profile }
             }
 
           )}
