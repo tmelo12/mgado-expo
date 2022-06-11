@@ -5,6 +5,7 @@ import Tabs from './BottomTab'
 import { Profile } from '../screens/Profile';
 import { SignIn } from '../screens/SignIn';
 import { Details } from '../screens/HomePage/details'
+import { AddFarm } from '../screens/Farm/AddFarm'
 const { Navigator, Screen } = createStackNavigator();
 
 export function Routes() {
@@ -26,6 +27,10 @@ export function Routes() {
         <Screen
           name="Details"
           component={Details}
+        />
+        <Screen
+          name="AddFarm"
+          component={AddFarm}
         />
       </Navigator>
     </NavigationContainer>

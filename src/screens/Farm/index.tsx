@@ -15,12 +15,12 @@ export function Farm() {
       <View style={styles.container}>
         <Text style={styles.title}>Meus Campos <MaterialCommunityIcons name="home-group" color={'#fff'} size={30} /></Text>
 
-        <Text style={styles.info}>Cadastre e gerencie seus locais.</Text>
+        <Text style={styles.info}>Cadastre e gerencie seus campos.</Text>
 
         <ScrollView>
           <CardFarm nameFarm="Fazenda Teste" idFarm="123" />
         </ScrollView>
-        <ButtonAdd nameFarm="emailUsuario" />
+        <ButtonAdd nameFarm="emailUsuario" action="AddFarm"/>
       </View>
     </>
   );

@@ -26,8 +26,4 @@ export const styles = StyleSheet.create({
     position: 'relative',
     marginTop: 50
   },
-  // scrollView:{
-  //   position: 'absolute',
-  //   marginTop: 100
-  // }
 });

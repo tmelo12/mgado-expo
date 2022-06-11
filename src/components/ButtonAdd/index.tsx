@@ -1,17 +1,24 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
-
+import { useNavigation } from '@react-navigation/native'
 import { styles } from './styles';
 
-type Props = {
+type Props = TouchableOpacityProps &{
     nameFarm: string;
+    action: string;
 }
 
-export function ButtonAdd({ nameFarm, ...rest }: Props) {
+export function ButtonAdd({ nameFarm, action, ...rest }: Props) {
+    const navigation = useNavigation();
+    const handleAdd  = () => {
+        navigation.navigate(action);
+    }
     return (
         <>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button}
+                onPress={ handleAdd }
+            >
                 <AntDesign style={styles.icon} name="plus" size={55} color="white" />
             </TouchableOpacity>
         </>
