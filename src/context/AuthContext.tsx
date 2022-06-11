@@ -85,8 +85,22 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
         }
     }
 
+
+    const getUserInfo = async () => {
+        try {
+            const value = await AsyncStorage.getItem('@meugado_off:user');
+            if (value !== null) {
+                setUser(JSON.parse(value) as User);
+            }
+            else {
+                console.log('Usuario não existe, permanece na página.')
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     useEffect(() => {
-        console.log('eff')
     }, [user])
 
     return (

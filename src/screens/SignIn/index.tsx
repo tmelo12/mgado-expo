@@ -10,7 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export function SignIn() {
   const navigation = useNavigation();
-  const { signIn } = useAuth();
+  const { signIn, user } = useAuth();
 
   async function handleSignIn() {
     try {
@@ -28,7 +28,7 @@ export function SignIn() {
     try {
       const value = await AsyncStorage.getItem('@meugado_off:user');
       if (value !== null) {
-        navigation.navigate('Profile');
+        navigation.navigate('HomePage');
       }
       else {
         console.log('Usuario não existe, permanece na página.')
@@ -40,7 +40,7 @@ export function SignIn() {
 
   useEffect(() => {
     getUserInfo();
-  }, []);
+  }, [user]);
 
   return (
     <View style={styles.container}>

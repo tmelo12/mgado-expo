@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -25,6 +25,10 @@ export function HomePage() {
   const route = useRoute();
   const navigation = useNavigation();
   const { user } = useAuth(); 
+
+  useEffect(()=>{
+
+  },[user])
 
   return (
     <SafeAreaView>

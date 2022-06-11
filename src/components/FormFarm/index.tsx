@@ -9,7 +9,7 @@ import { yupResolver  } from "@hookform/resolvers/yup";
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import uuid from 'react-native-uuid';
-
+import { useAuth } from '../../hooks/useAuth';
 
 type FormData ={
   id: number[] | string;
@@ -29,18 +29,23 @@ export function FormFarm() {
   });
 
   const navigation = useNavigation();
-
+  const { user } = useAuth(); 
   const handleCancel = () => {
     navigation.goBack();
   }
   
   async function handleRegister(data: FormData) {
     try{
-      data.email_user = "thiago@email.com";
+      //capturar o que ja tem
+      const response = await AsyncStorage.getItem('@meugado_off:farms');
+      const previousData = response ? JSON.parse(response) : [];
+      console.log(previousData);
+      
+      data.email_user = user?.email as string;
       data.id = uuid.v4();
       const farmInfo = JSON.stringify(data);
+      //await AsyncStorage.setItem('@meugado_off:farms', farmInfo);
       alert("Campo registrado com sucesso!");
-      //await AsyncStorage.setItem('@meugado_off:farms', userInfo);
     }
     catch(e){
       console.log(e);
