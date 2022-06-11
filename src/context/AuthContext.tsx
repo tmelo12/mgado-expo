@@ -101,6 +101,9 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
     }
 
     useEffect(() => {
+        if(!user){
+            getUserInfo();
+        }
     }, [user])
 
     return (

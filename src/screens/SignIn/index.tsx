@@ -15,7 +15,7 @@ export function SignIn() {
   async function handleSignIn() {
     try {
       await signIn();
-      navigation.navigate('Profile');
+      navigation.navigate('HomePage');
     }
     catch (err) {
       console.log(err);

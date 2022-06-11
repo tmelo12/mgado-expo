@@ -30,6 +30,9 @@ export function Profile() {
     signOut();
     navigation.navigate("SignIn");
   }
+  useEffect(()=>{
+    
+  },[user])
 
   return (
     <View style={styles.container}>
