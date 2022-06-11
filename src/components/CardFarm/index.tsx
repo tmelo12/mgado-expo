@@ -5,9 +5,10 @@ import { styles } from './styles';
 
 type Props = {
     nameFarm: string;
+    idFarm: string
 }
 
-export function CardFarm({ nameFarm, ...rest }: Props) {
+export function CardFarm({ nameFarm, idFarm, ...rest }: Props) {
     return (
         <>
             <Text style={styles.nameAnimal}>{nameFarm}</Text>
@@ -23,7 +24,7 @@ export function CardFarm({ nameFarm, ...rest }: Props) {
                     </View>
 
                     <View style={styles.cardPart}>
-                        <Text style={styles.nameButton}>AD {"\n"} Nascimento</Text>
+                        <Text style={styles.nameButton}>{ nameFarm }</Text>
                     </View>
                 </TouchableOpacity>
             </View>

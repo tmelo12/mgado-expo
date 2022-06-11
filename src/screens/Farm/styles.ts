@@ -7,6 +7,8 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'column',
+    marginTop: Dimensions.get('window').height - 740
   },
   title:{
     fontSize: 32,
@@ -15,12 +17,17 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.fontFamily,
     position: 'absolute',
     top: 0,
-    marginTop: 55
   },
   info:{
     color: 'white',
     fontFamily: 'notoserif',
     textAlign: 'center',
-    marginBottom: Dimensions.get('window').height - 210,
+    top: 0,
+    position: 'relative',
+    marginTop: 50
   },
+  // scrollView:{
+  //   position: 'absolute',
+  //   marginTop: 100
+  // }
 });

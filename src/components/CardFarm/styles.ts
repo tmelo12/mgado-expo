@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
         fontFamily: theme.fonts.fontFamily,
         textAlign: 'center',
         marginBottom: 5,
+        marginTop: 10
     },
     row: {
         flexDirection: "row",
@@ -18,7 +19,6 @@ export const styles = StyleSheet.create({
         height: 100,
         borderBottomLeftRadius: 10,
         borderTopLeftRadius: 10,
-        marginLeft: Dimensions.get('window').width - 350,
         borderWidth: 1,
         borderBottomColor: 'white',
         borderLeftColor: 'white',
@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     },
     nameButton: {
         textAlign: 'center',
-        marginTop: 32,
+        marginTop: 40,
         color: 'white',
         fontFamily: theme.fonts.fontFamily,
     }

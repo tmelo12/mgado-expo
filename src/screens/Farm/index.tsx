@@ -13,12 +13,13 @@ export function Farm() {
       <Background />
       <View style={styles.container}>
         <Text style={styles.title}>Meus Campos <MaterialCommunityIcons name="home-group" color={'#fff'} size={30} /></Text>
-      </View>
-      <Text style={styles.info}>Cadastre e gerencie seus locais.</Text>
 
-      <ScrollView>
-        <CardFarm typeAnimal="bovinos-b" />
-      </ScrollView>
+        <Text style={styles.info}>Cadastre e gerencie seus locais.</Text>
+
+        <ScrollView>
+          <CardFarm nameFarm="Fazenda Teste" idFarm="123" />
+        </ScrollView>
+      </View>
     </>
   );
 }
