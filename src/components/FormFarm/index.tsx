@@ -5,12 +5,17 @@ import { ControlledInput } from '../ControledInput';
 import { Container } from './styles';
 import { useForm } from 'react-hook-form';
 import * as yup from "yup";
-import { yupResolver  } from "@hookform/resolvers/yup"
+import { yupResolver  } from "@hookform/resolvers/yup";
+import { useNavigation, useRoute } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import uuid from 'react-native-uuid';
+
 
 type FormData ={
-  email: string;
+  id: number[] | string;
   name: string;
   local: string;
+  email_user: string;
 }
 
 const schema = yup.object({
@@ -23,14 +28,19 @@ export function FormFarm() {
     resolver: yupResolver(schema)
   });
 
-  const handleCancel = () => {
+  const navigation = useNavigation();
 
+  const handleCancel = () => {
+    navigation.goBack();
   }
   
-  function handleRegister(data: FormData) {
-    console.log(data);
+  async function handleRegister(data: FormData) {
     try{
-
+      data.email_user = "thiago@email.com";
+      data.id = uuid.v4();
+      const farmInfo = JSON.stringify(data);
+      alert("Campo registrado com sucesso!");
+      //await AsyncStorage.setItem('@meugado_off:farms', userInfo);
     }
     catch(e){
       console.log(e);

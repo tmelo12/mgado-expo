@@ -11,6 +11,7 @@ import {
 
 import { Routes } from './src/routes';
 import { View } from 'react-native';
+import { AuthContextProvider } from './src/context/AuthContext';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -28,7 +29,9 @@ export default function App() {
       style={{
         flex: 1
       }}>
-      <Routes />
+      <AuthContextProvider>
+        <Routes />
+      </AuthContextProvider>
     </View>
   );
 }

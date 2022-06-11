@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   name: {
     fontFamily: theme.fonts.bold,
-    color: theme.colors.text,
+    color: theme.colors.note,
     fontSize: 32,
     marginTop: 7
   },

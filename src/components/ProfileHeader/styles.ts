@@ -25,12 +25,12 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontFamily: theme.fonts.bold,
-    color: theme.colors.text,
+    color: theme.colors.note,
     fontSize: 32,
   },
   subtitle: {
     fontFamily: theme.fonts.medium,
-    color: theme.colors.text,
+    color: theme.colors.note,
     fontSize: 14,
     marginTop: -7
   },

@@ -7,6 +7,7 @@ import { CardAnimalHome } from '../../components/CardAnimalHome'
 import { styles } from './styles';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useAuth } from '../../hooks/useAuth';
 
 type Profile = {
   email: string;
@@ -23,7 +24,7 @@ type Params = {
 export function HomePage() {
   const route = useRoute();
   const navigation = useNavigation();
-  const profile = route.params as Params;
+  const { user } = useAuth(); 
 
   return (
     <SafeAreaView>
@@ -33,7 +34,7 @@ export function HomePage() {
 
 
           <Text style={styles.title}>Resumo <MaterialCommunityIcons name="clipboard-file" color={'#fff'} size={30} /></Text>
-          <Text style={styles.welcome}>Bem-vindo, {profile.profile?.name}</Text>
+          <Text style={styles.welcome}>Bem-vindo, {user?.name}</Text>
           <Text style={styles.info}>Aperte sobre o animal que deseja para visualizar {"\n"}um resumo completo.</Text>
 
           <Text style={styles.typeAnimal}>Bovinos</Text>
