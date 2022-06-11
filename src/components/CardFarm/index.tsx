@@ -18,7 +18,7 @@ export function CardFarm({ nameFarm, idFarm, ...rest }: Props) {
                         <Image
                             style={styles.img}
                             source={
-                                require("../../assets/icons/bovinos-b.png")
+                                require("../../assets/standard/fazenda.jpg")
                             }
                         />
                     </View>

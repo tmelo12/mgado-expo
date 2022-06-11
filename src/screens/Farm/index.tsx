@@ -6,6 +6,7 @@ import { Background } from '../../components/Background'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { CardFarm } from '../../components/CardFarm';
 import { ScrollView } from 'react-native-gesture-handler';
+import { ButtonAdd } from '../../components/ButtonAdd';
 
 export function Farm() {
   return (
@@ -19,6 +20,7 @@ export function Farm() {
         <ScrollView>
           <CardFarm nameFarm="Fazenda Teste" idFarm="123" />
         </ScrollView>
+        <ButtonAdd nameFarm="emailUsuario" />
       </View>
     </>
   );

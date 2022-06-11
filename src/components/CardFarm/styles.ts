@@ -15,8 +15,8 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
     },
     cardIcon: {
-        width: 100,
-        height: 100,
+        width: 140,
+        height: 110,
         borderBottomLeftRadius: 10,
         borderTopLeftRadius: 10,
         borderWidth: 1,
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     },
     cardPart: {
         width: Dimensions.get('window').width - 200,
-        height: 100,
+        height: 110,
         borderWidth: 1,
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
