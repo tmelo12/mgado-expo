@@ -1,10 +1,10 @@
-import { Feather } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import React, { useState } from 'react';
 import { TextInputProps } from 'react-native';
 import { Container, IconContainer, InputText } from './styles';
 
 export type InputProps = TextInputProps & {
-  icon: React.ComponentProps<typeof Feather>['name'];
+  icon: React.ComponentProps<typeof MaterialCommunityIcons>['name'];
   value?: string;
 }
 
@@ -24,7 +24,7 @@ export function Input({ icon, value, ...rest }: InputProps) {
   return (
     <Container >
       <IconContainer isFocused={isFocused}>
-        <Feather
+        <MaterialCommunityIcons
           name={icon}
           size={24}
           color={(isFocused || isFilled) ? '#008000' : '#AEAEB3'}

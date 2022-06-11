@@ -1,33 +1,63 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { theme } from '../../styles/theme';
 import { ButtonForm } from '../ButtonForm';
-import { Input } from '../Input';
+import { ControlledInput } from '../ControledInput';
 import { Container } from './styles';
+import { useForm } from 'react-hook-form';
+import * as yup from "yup";
+import { yupResolver  } from "@hookform/resolvers/yup"
+
+type FormData ={
+  email: string;
+  name: string;
+  local: string;
+}
+
+const schema = yup.object({
+  name: yup.string().required("O nome do campo não pode ficar em branco."),
+  local: yup.string().required("O nome do local não pode ficar em branco.")
+})
 
 export function FormFarm() {
+  const { control, handleSubmit, formState:{ errors } } = useForm<FormData>({
+    resolver: yupResolver(schema)
+  });
 
-  const handleSubmit = () =>{
-    
+  const handleCancel = () => {
+
   }
+  
+  function handleRegister(data: FormData) {
+    console.log(data);
+    try{
 
-  const handleCancel =  () =>{
-
+    }
+    catch(e){
+      console.log(e);
+      alert("Houve um problema ao salvar. Tente novamente mais tarde.")
+    }
   }
 
   return (
     <Container>
-      <Input
-        icon="user"
-        placeholder="Nome do Campo"
+      <ControlledInput
+        name="name"
+        control={control}
+        icon="text"
+        placeholder="Nome do campo"
+        error={errors.name}
       />
-      <Input
-        icon="mail"
-        placeholder="Localização do Campo"
+      <ControlledInput
+        name="local"
+        icon="google-maps"
+        placeholder="Nome do local do campo"
+        control={control}
+        error={errors.local}
       />
       <ButtonForm
         title="Cadastrar"
-        onPress={handleSubmit}
         colorButton={theme.colors.buttonSave}
+        onPress={ handleSubmit(handleRegister) }
       />
 
       <ButtonForm
