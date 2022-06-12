@@ -26,4 +26,7 @@ export const styles = StyleSheet.create({
     position: 'relative',
     marginTop: 50
   },
+  noFarms:{
+    
+  }
 });

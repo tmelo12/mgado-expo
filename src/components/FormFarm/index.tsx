@@ -13,7 +13,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { Alert } from 'react-native';
 
 type FormData = {
-  id: number[] | string;
+  id: string;
   name: string;
   local: string;
   email_user: string;
@@ -40,9 +40,8 @@ export function FormFarm() {
       //capturar o que ja tem
       const response = await AsyncStorage.getItem('@meugado_off:farms');
       const previousData = response ? JSON.parse(response) : [];
-      console.log(previousData);
       data.email_user = user?.email as string;
-      data.id = uuid.v4();
+      data.id = uuid.v4() as string;
       const farmInfo = JSON.stringify(data);
       const registers = [...previousData, farmInfo];
       await AsyncStorage.setItem('@meugado_off:farms', JSON.stringify(registers));
