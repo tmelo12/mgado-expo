@@ -27,6 +27,8 @@ export const styles = StyleSheet.create({
     marginTop: 50
   },
   noFarms:{
-    
+    marginBottom: Dimensions.get('window').height - 220,
+    fontSize: 20,
+    textAlign: 'center',
   }
 });

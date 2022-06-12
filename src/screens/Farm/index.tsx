@@ -39,7 +39,7 @@ export function Farm() {
 
           {data.length === 0 ? (
             <>
-              <Text>Você ainda não possui campos cadastrados...</Text>
+              <Text style={styles.noFarms}>Você ainda não possui campos cadastrados...</Text>
             </>
           ) : (
               <FlatList

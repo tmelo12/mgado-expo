@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.fontFamily,
     position: 'absolute',
     top: 0,
-    marginTop: 25
+    marginTop: 50
   },
   button: {
     alignItems: "center",

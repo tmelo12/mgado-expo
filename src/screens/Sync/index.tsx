@@ -16,6 +16,7 @@ export function Sync() {
             
             <TouchableOpacity
               style={styles.button}
+              onPress={() => alert('Atualizações enviadas!')}
             >
               <Text style={{color:'black',fontFamily:'notoserif',fontSize: 15}}>Enviar Alterações <MaterialCommunityIcons name="cached" color={'#008000'} size={20} /></Text>
             </TouchableOpacity>

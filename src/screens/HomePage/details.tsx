@@ -5,6 +5,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Background } from '../../components/Background'
 import { styles } from './styles-details';
 import { ScrollView } from 'react-native-gesture-handler';
+import { AbstractAnimal } from '../../components/AbstractAnimal'
+
 
 export function Details() {
   const route = useRoute();
@@ -15,6 +17,7 @@ export function Details() {
     <>
       <Background />
         <Text style={styles.title}>{type}</Text>
+        <AbstractAnimal typeAnimal={type}/>
     </>
   );
 }
