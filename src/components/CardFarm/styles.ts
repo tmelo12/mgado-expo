@@ -46,5 +46,10 @@ export const styles = StyleSheet.create({
         marginTop: 40,
         color: 'white',
         fontFamily: theme.fonts.fontFamily,
+    },
+    subNameButton: {
+        textAlign: 'center',
+        color: 'white',
+        fontFamily: theme.fonts.fontFamily,
     }
 })

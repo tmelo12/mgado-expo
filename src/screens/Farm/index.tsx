@@ -46,7 +46,7 @@ export function Farm() {
                 data={data}
                 keyExtractor={item => item}
                 renderItem={({ item }) =>
-                  <CardFarm nameFarm={JSON.parse(item).name} idFarm={JSON.parse(item).id} />
+                  <CardFarm nameFarm={JSON.parse(item).name} idFarm={JSON.parse(item).id} localFarm={JSON.parse(item).local}/>
                 }
               />
             )}

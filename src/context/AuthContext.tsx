@@ -63,7 +63,8 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
 
     const removeUser = async () => {
         try {
-            await AsyncStorage.removeItem('@meugado_off:user')
+            await AsyncStorage.removeItem('@meugado_off:user');
+            await AsyncStorage.removeItem('@meugado_off:farms');
         } catch (e) {
             console.log(e);
         }
