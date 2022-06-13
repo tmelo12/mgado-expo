@@ -11,27 +11,28 @@ export function Animal() {
   return (
     <>
       <Background />
-      <View style={styles.container}>
-        <Text style={styles.title}>Meus Animais <MaterialCommunityIcons name="account-cowboy-hat" color={'#fff'} size={30} /></Text>
-      </View>
-      <Text style={styles.info}>Selecione um tipo de registro.</Text>
-
       <ScrollView>
-        <CardAnimal typeAnimal={'Bovinos'}/>
+        <View style={styles.container}>
+          <Text style={styles.title}>Meus Animais <MaterialCommunityIcons name="account-cowboy-hat" color={'#fff'} size={30} /></Text>
+        </View>
+        <Text style={styles.info}>Selecione um tipo de registro.</Text>
 
-        <CardAnimal typeAnimal={'Bulbalinos'}/>
 
-        <CardAnimal typeAnimal={'Caprinos'}/>
+        <CardAnimal typeAnimal={'Bovinos'} />
 
-        <CardAnimal typeAnimal={'Ovinos'}/>
+        <CardAnimal typeAnimal={'Bulbalinos'} />
 
-        <CardAnimal typeAnimal={'Equinos'}/>
+        <CardAnimal typeAnimal={'Caprinos'} />
 
-        <CardAnimal typeAnimal={'Asininos'}/>
+        <CardAnimal typeAnimal={'Ovinos'} />
 
-        <CardAnimal typeAnimal={'Muares'}/>
+        <CardAnimal typeAnimal={'Equinos'} />
 
-        <CardAnimal typeAnimal={'Aves'}/>
+        <CardAnimal typeAnimal={'Asininos'} />
+
+        <CardAnimal typeAnimal={'Muares'} />
+
+        <CardAnimal typeAnimal={'Aves'} />
 
       </ScrollView>
 

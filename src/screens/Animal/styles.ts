@@ -13,15 +13,13 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     fontFamily: theme.fonts.fontFamily,
-    position: 'absolute',
     top: 0,
-    marginTop: 55
+    marginTop: 50
   },
   info:{
     color: 'white',
     fontFamily: 'notoserif',
     textAlign: 'center',
-    marginTop: Dimensions.get('window').height - 700,
   },
   
 });

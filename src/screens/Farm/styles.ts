@@ -7,16 +7,14 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'column',
-    marginTop: Dimensions.get('window').height - 740
   },
   title:{
     fontSize: 32,
     fontWeight: 'bold',
     color: 'white',
     fontFamily: theme.fonts.fontFamily,
-    position: 'absolute',
     top: 0,
+    marginTop: 50
   },
   info:{
     color: 'white',
@@ -24,7 +22,6 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     top: 0,
     position: 'relative',
-    marginTop: 50
   },
   noFarms:{
     marginBottom: Dimensions.get('window').height - 220,
