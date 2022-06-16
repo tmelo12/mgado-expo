@@ -16,4 +16,9 @@ export const styles = StyleSheet.create({
     marginTop: Dimensions.get('window').width - 325,
     textAlign: 'center',
   },
+  spinner:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 });
