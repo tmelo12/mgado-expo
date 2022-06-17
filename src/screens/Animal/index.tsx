@@ -6,6 +6,7 @@ import { Background } from '../../components/Background'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { CardAnimal } from '../../components/CardAnimal'
 import { ScrollView } from 'react-native-gesture-handler';
+import { Divider } from '@react-native-material/core';
 
 export function Animal() {
   return (
@@ -20,17 +21,31 @@ export function Animal() {
 
         <CardAnimal typeAnimal={'Bovinos'} />
 
+        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
+
         <CardAnimal typeAnimal={'Bulbalinos'} />
+
+        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
 
         <CardAnimal typeAnimal={'Caprinos'} />
 
+        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
+
         <CardAnimal typeAnimal={'Ovinos'} />
+
+        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
 
         <CardAnimal typeAnimal={'Equinos'} />
 
+        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
+
         <CardAnimal typeAnimal={'Asininos'} />
 
+        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
+
         <CardAnimal typeAnimal={'Muares'} />
+
+        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
 
         <CardAnimal typeAnimal={'Aves'} />
 

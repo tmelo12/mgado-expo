@@ -20,6 +20,5 @@ export const styles = StyleSheet.create({
     color: 'white',
     fontFamily: 'notoserif',
     textAlign: 'center',
-  },
-  
+  }
 });

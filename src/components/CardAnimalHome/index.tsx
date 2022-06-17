@@ -7,7 +7,6 @@ import { theme } from '../../styles/theme';
 
 type Props = TouchableOpacityProps & {
   type: string;
-  //icon: React.ComponentProps<typeof SimpleLineIcons>['name'];
 }
 
 export function CardAnimalHome({type, ...rest}: Props) {

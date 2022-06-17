@@ -8,64 +8,41 @@ export const styles = StyleSheet.create({
         color: 'white',
         fontFamily: theme.fonts.fontFamily,
         textAlign: 'center',
-        marginTop: 15,
+        marginTop: 5,
         marginBottom: 5
     },
     row: {
-        flexDirection: "row"
+        flexDirection: "column"
     },
     cardIcon: {
-        width: 70,
-        height: 90,
-        borderBottomLeftRadius: 10,
-        borderTopLeftRadius: 10,
-        marginLeft: Dimensions.get('window').width - 370,
-        borderWidth: 1,
-        borderBottomColor: 'white',
-        borderLeftColor: 'white',
-        borderTopColor: 'white',
+        flex: 1,
+        alignItems: 'center',
+        alignSelf: 'center'
     },
     icon: {
         width: 50,
         height: 50,
-        marginTop: 17,
-        marginLeft: 7
+        marginLeft: 7,
+        alignSelf: 'center',
+        justifyContent: 'center',
     },
-    cardPart: {
-        width: 90,
-        height: 90,
+    button: {
+        width: '60%',
+        height: 40,
         borderWidth: 1,
-        borderBottomColor: 'white',
-        borderTopColor: 'white',
         borderColor: 'white',
-    },
-    cardPart2: {
-        width: 90,
-        height: 90,
-        borderWidth: 1,
-        borderBottomColor: 'white',
-        borderRightColor: 'white',
-        borderTopColor: 'white',
-    },
-    cardPart3: {
-        width: 90,
-        height: 90,
-        borderWidth: 1,
-        borderBottomColor: 'white',
-        borderRightColor: 'white',
-        borderTopColor: 'white',
-        borderTopRightRadius: 10,
-        borderBottomRightRadius: 10,
-    },
-    nameButtonT: {
-        textAlign: 'center',
-        marginTop: 25,
-        color: 'white',
-        fontFamily: theme.fonts.fontFamily,
+        borderRadius: 20,
+        alignSelf: 'center',
+        marginTop: 10
     },
     nameButton: {
         textAlign: 'center',
-        marginTop: 32,
+        color: 'white',
+        fontFamily: theme.fonts.fontFamily,
+        marginTop: 10
+    },
+    nameButtonDoubleLine: {
+        textAlign: 'center',
         color: 'white',
         fontFamily: theme.fonts.fontFamily,
     }
