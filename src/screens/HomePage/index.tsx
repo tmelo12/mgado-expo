@@ -27,7 +27,7 @@ export function HomePage() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    if(user){
+    if (user) {
       setLoading(false);
     }
   }, [user])
@@ -35,13 +35,14 @@ export function HomePage() {
   return (
     <>
       <Background />
-      { isLoading ? <ActivityIndicator style={styles.spinner} size="large" color="#fff"/> :
-        <ScrollView>
-          <View style={styles.container}>
+      {isLoading ? <ActivityIndicator style={styles.spinner} size="large" color="#fff" /> :
+        <View style={styles.container}>
 
-            <Text style={styles.title}>Resumo <MaterialCommunityIcons name="clipboard-file" color={'#fff'} size={30} /></Text>
-            <Text style={styles.welcome}>Bem-vindo, {user?.name}</Text>
-            <Text style={styles.info}>Aperte sobre o animal que deseja para visualizar {"\n"}um resumo completo.</Text>
+          <Text style={styles.title}>Resumo <MaterialCommunityIcons name="clipboard-file" color={'#fff'} size={30} /></Text>
+          <Text style={styles.welcome}>Bem-vindo, {user?.name}</Text>
+          <Text style={styles.info}>Aperte sobre o animal que deseja para visualizar {"\n"}um resumo completo.</Text>
+
+          <ScrollView showsVerticalScrollIndicator={false} >
 
             <Text style={styles.typeAnimal}>Bovinos</Text>
             <CardAnimalHome type={'bovinos-b'} />
@@ -66,8 +67,8 @@ export function HomePage() {
 
             <Text style={styles.typeAnimal}>Aves</Text>
             <CardAnimalHome type={'aves-b'} />
-          </View>
-        </ScrollView>
+          </ScrollView>
+        </View>
       }
     </>
   );
