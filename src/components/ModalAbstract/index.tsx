@@ -35,7 +35,7 @@ export function ModalAbstract({ visible, typeAnimal, closeModal, gender, age, ..
                         <ModalText>AD Sumiço: 97</ModalText>
                         <ModalText>AD Venda: 96</ModalText>
                         <TouchableOpacity
-                            style={{backgroundColor:"#2196F3", borderRadius: 20, padding: 10, elevation: 2}}
+                            style={{backgroundColor:"#2196F3", borderRadius: 20, padding: 10, elevation: 2, width: 110}}
                             onPress={() => [setModalVisible(!visible), closeModal(!visible)]}
                         >
                             <TextButton>Fechar</TextButton>

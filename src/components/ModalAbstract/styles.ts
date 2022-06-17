@@ -11,14 +11,13 @@ export const CenteredView = styled.View`
     flex: 1;
     justify-content: center;
     align-items: center;
-    margin-top: 22px;
 `;
 
 export const ModalView = styled.View`
     margin: 20px;
     background-color: white;
     border-radius: 20px;
-    padding: 35px;
+    padding: 15%;
     align-items: center;
     shadow-color: #000;
     shadow-offset: 0px 2px;
@@ -44,7 +43,6 @@ export const ModalButton = styled.TouchableOpacity`
     border-radius: 20px;
     padding: 10px;
     elevation: 2;
-
 `;  
 
 export const TextButton = styled.Text`
