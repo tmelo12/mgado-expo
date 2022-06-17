@@ -10,12 +10,13 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text<Props>`
-  font-size: 30px;
+  font-size: 32px;
   font-weight: bold;
   color: ${props => props.theme.colors.text};
   font-family: ${props => props.theme.fonts.fontFamily};
   position: absolute;
-  top: ${Dimensions.get('window').height - 770};
+  top:0;
+  margin-top: 15px;
   padding: 24px;
 `;
 

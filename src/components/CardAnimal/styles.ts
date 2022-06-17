@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'notoserif',
         borderRadius: 20,
-        marginLeft: Dimensions.get('window').width - 340
+        marginLeft: 50
     },
     nameButton: {
         textAlign: 'center',

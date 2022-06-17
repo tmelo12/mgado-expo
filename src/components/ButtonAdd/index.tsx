@@ -5,11 +5,10 @@ import { useNavigation } from '@react-navigation/native'
 import { styles } from './styles';
 
 type Props = TouchableOpacityProps &{
-    nameFarm: string;
     action: string;
 }
 
-export function ButtonAdd({ nameFarm, action, ...rest }: Props) {
+export function ButtonAdd({ action, ...rest }: Props) {
     const navigation = useNavigation();
     const handleAdd  = () => {
         navigation.navigate(action);

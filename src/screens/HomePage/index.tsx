@@ -7,6 +7,7 @@ import { CardAnimalHome } from '../../components/CardAnimalHome'
 import { styles } from './styles';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useAuth } from '../../hooks/useAuth';
+import { ButtonAdd } from '../../components/ButtonAdd';
 
 type Profile = {
   email: string;
@@ -68,6 +69,7 @@ export function HomePage() {
             <Text style={styles.typeAnimal}>Aves</Text>
             <CardAnimalHome type={'aves-b'} />
           </ScrollView>
+          <ButtonAdd action="AddAnimal" />
         </View>
       }
     </>

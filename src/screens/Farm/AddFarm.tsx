@@ -3,17 +3,18 @@ import { TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView } from 'react-
 import { Container, Subtitle, Title } from './styles.addform';
 import { Background } from '../../components/Background';
 import { FormFarm } from '../../components/FormFarm';
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { theme } from '../../styles/theme';
 
 export function AddFarm() {
   return (
+    <>
+      <Background />
       <Container>
-        <Background />
-          <Title theme={theme}>Cadastro de campos <MaterialCommunityIcons name="home-group" color={'#fff'} size={30} /></Title>
+        <Title theme={theme}>Cadastro de campos <MaterialCommunityIcons name="home-group" color={'#fff'} size={30} /></Title>
 
-          <Subtitle theme={theme}>Cadastre um novo campo</Subtitle>
-        
+        <Subtitle theme={theme}>Cadastre um novo campo</Subtitle>
+
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <KeyboardAvoidingView behavior="position" enabled>
             <>
@@ -22,5 +23,6 @@ export function AddFarm() {
           </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
       </Container >
+    </>
   );
 }

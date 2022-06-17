@@ -7,6 +7,7 @@ import { SignIn } from '../screens/SignIn';
 import { Details } from '../screens/HomePage/details';
 import { AddFarm } from '../screens/Farm/AddFarm';
 import { ListAnimalType } from '../screens/Animal/ListAnimalType';
+import { AddAnimal } from '../screens/Animal/AddAnimal';
 const { Navigator, Screen } = createStackNavigator();
 
 export function Routes() {
@@ -36,6 +37,10 @@ export function Routes() {
         <Screen
           name="ListAnimalType"
           component={ListAnimalType}
+        />
+        <Screen
+          name="AddAnimal"
+          component={AddAnimal}
         />
       </Navigator>
     </NavigationContainer>
