@@ -12,7 +12,8 @@ export const styles = StyleSheet.create({
         marginBottom: 5
     },
     row: {
-        flexDirection: "column"
+        flexDirection: "row",
+        justifyContent: 'space-between'
     },
     cardIcon: {
         flex: 1,
@@ -25,25 +26,32 @@ export const styles = StyleSheet.create({
         marginLeft: 7,
         alignSelf: 'center',
         justifyContent: 'center',
+        marginBottom: -15
     },
     button: {
-        width: '60%',
+        width: 200,
         height: 40,
+        borderColor: '#fff',
         borderWidth: 1,
-        borderColor: 'white',
+        marginTop: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: 'white',
+        fontFamily: 'notoserif',
         borderRadius: 20,
-        alignSelf: 'center',
-        marginTop: 10
+        marginLeft: Dimensions.get('window').width - 340
     },
     nameButton: {
         textAlign: 'center',
         color: 'white',
         fontFamily: theme.fonts.fontFamily,
-        marginTop: 10
+        marginLeft: 8,
+        alignSelf: 'center',
     },
     nameButtonDoubleLine: {
         textAlign: 'center',
         color: 'white',
         fontFamily: theme.fonts.fontFamily,
-    }
+        marginLeft: 8
+    },
 })

@@ -28,7 +28,7 @@ export function ModalAbstract({ visible, typeAnimal, closeModal, gender, age, ..
                 <CenteredView>
                     <ModalView>
                         <ModalTitle>Resumo de {typeAnimal}</ModalTitle>
-                        <ModalText>{gender} {age}</ModalText>
+                        <ModalText>{gender}(s) de {age}</ModalText>
                         <ModalText>Total: 100</ModalText>
                         <ModalText>Declarados: 99</ModalText>
                         <ModalText>AD Nascimento: 98</ModalText>

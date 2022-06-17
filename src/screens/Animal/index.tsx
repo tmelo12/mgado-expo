@@ -12,44 +12,43 @@ export function Animal() {
   return (
     <>
       <Background />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.container}>
-          <Text style={styles.title}>Meus Animais <MaterialCommunityIcons name="account-cowboy-hat" color={'#fff'} size={30} /></Text>
-        </View>
+      <View style={styles.container}>
+        <Text style={styles.title}>Meus Animais <MaterialCommunityIcons name="account-cowboy-hat" color={'#fff'} size={30} /></Text>
+
         <Text style={styles.info}>Selecione um tipo de registro.</Text>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <CardAnimal typeAnimal={'Bovinos'} />
 
+          <Divider style={{ marginTop: 15, width: 300 }} color='white' />
 
-        <CardAnimal typeAnimal={'Bovinos'} />
+          <CardAnimal typeAnimal={'Bulbalinos'} />
 
-        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
+          <Divider style={{ marginTop: 15,  }} color='white' />
 
-        <CardAnimal typeAnimal={'Bulbalinos'} />
+          <CardAnimal typeAnimal={'Caprinos'} />
 
-        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
+          <Divider style={{ marginTop: 15,  }} color='white' />
 
-        <CardAnimal typeAnimal={'Caprinos'} />
+          <CardAnimal typeAnimal={'Ovinos'} />
 
-        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
+          <Divider style={{ marginTop: 15,  }} color='white' />
 
-        <CardAnimal typeAnimal={'Ovinos'} />
+          <CardAnimal typeAnimal={'Equinos'} />
 
-        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
+          <Divider style={{ marginTop: 15,  }} color='white' />
 
-        <CardAnimal typeAnimal={'Equinos'} />
+          <CardAnimal typeAnimal={'Asininos'} />
 
-        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
+          <Divider style={{ marginTop: 15, }} color='white' />
 
-        <CardAnimal typeAnimal={'Asininos'} />
+          <CardAnimal typeAnimal={'Muares'} />
 
-        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
+          <Divider style={{ marginTop: 15, }} color='white' />
 
-        <CardAnimal typeAnimal={'Muares'} />
+          <CardAnimal typeAnimal={'Aves'} />
 
-        <Divider style={{ marginTop: 15, marginLeft:25, marginRight:25 }} color='white'/>
-
-        <CardAnimal typeAnimal={'Aves'} />
-
-      </ScrollView>
+        </ScrollView>
+      </View>
 
     </>
   );

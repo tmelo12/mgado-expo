@@ -1,5 +1,8 @@
 import React from 'react';
 import { Text, TouchableOpacity, Image, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { styles } from './styles';
 
@@ -8,9 +11,10 @@ type Props = {
 }
 
 export function CardAnimal({ typeAnimal, ...rest }: Props) {
+    const navigation = useNavigation();
     var icon;
     var typeConverted: string;
-    
+
     if (typeAnimal === 'Bovinos') {
         icon = require('../../assets/icons/bovinos-b.png');
         typeConverted = 'Bovinos';
@@ -56,16 +60,34 @@ export function CardAnimal({ typeAnimal, ...rest }: Props) {
                         }
                     />
                 </View>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.nameButtonDoubleLine}>AD {"\n"} Nascimento</Text>
+                <TouchableOpacity style={styles.button}
+                    onPress={() => navigation.navigate("ListAnimalType")}
+                >
+                    <View style={styles.row}>
+                        <Text style={styles.nameButtonDoubleLine}>AD {"\n"} Nascimento</Text>
+                        <View style={{ marginLeft: 5, marginTop:7 }}>
+                            <MaterialCommunityIcons name="archive-clock" size={20} color="white" />
+                        </View>
+                    </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.nameButton}>Ativo</Text>
+                    <View style={styles.row}>
+                        <Text style={styles.nameButton}>Ativo</Text>
+                        <View style={{ marginLeft: 50 }}>
+                            <MaterialCommunityIcons name="archive-check" size={20} color="white" />
+                        </View>
+
+                    </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.nameButton}>Desligado</Text>
+                    <View style={styles.row}>
+                        <Text style={styles.nameButton}>Desligado</Text>
+                        <View style={{ marginLeft: 25 }}>
+                            <MaterialCommunityIcons name="archive-off" size={20} color="white" />
+                        </View>
+                    </View>
                 </TouchableOpacity>
             </View>
         </>
